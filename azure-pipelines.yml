@@ -10,6 +10,7 @@ pool:
   name: Default
   demands: 
   - agent.name -equals SAURAV
+  - maven
 
 steps:
 - task: Maven@3
