@@ -8,11 +8,8 @@ trigger:
 
 pool:
   name: Default
-  demands:
+  demands: 
   - agent.name -equals SAURAV
-  - maven
-  - Agent.Version -gtVersion 2.163.1
-
 
 steps:
 - task: Maven@3
@@ -20,8 +17,17 @@ steps:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '17.0.4'
+    jdkVersionOption: '17.0.7'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'warFileDrop'
+    publishLocation: 'Container'
