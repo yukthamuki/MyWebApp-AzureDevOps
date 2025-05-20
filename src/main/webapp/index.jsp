@@ -74,7 +74,7 @@
         <h1>Welcome to CodersArcade.com</h1>
         <h2>Master CI/CD with Our Hands-On Courses</h2>
         <div class="cta">
-            <h2>Start Learning Today!!!!!!!!!</h2>
+            <h2>Start Learning Today!!!!</h2>
             <p>Join thousands of learners and get hands-on experience with Continuous Integration and Continuous Deployment practices!</p>
             <a href="https://www.youtube.com/c/codersarcade" class="button" target="_blank">Explore Courses</a>
         </div>
